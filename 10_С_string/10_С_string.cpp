@@ -53,6 +53,35 @@ char* mystrcat(char* str1, const char* str2)
     }
     return str1;
 }
+//Task 5
+//char* mystrstr(char* str1, char* str2); — функція
+//здійснює пошук підрядка str2 у рядку str1.Функція
+//повертає покажчик на перше входження підрядка str2
+//в рядок str1, в іншому випадку — 0.
+char* mystrstr(char* str1,const char* str2) {
+    
+    bool flag = true;
+    char* tmp = str1;
+    for (size_t i = 0; i < strlen(str1); i++)
+    {
+        flag = true;
+        for (size_t j = 0; j < strlen(str2); j++)
+        {
+            if (str1[i + j] != str2[j])
+            {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            return tmp;
+        }
+        else {
+            tmp++;
+        }
+    }
+    return 0;
+}
 int main()
 {
     //char str[]{'H','e','l','l','o','\0'};
@@ -153,6 +182,10 @@ int main()
     {
         cout << "\t" << symbol[i] << " : " << (char)toupper(symbol[i]) << endl;
     }
+
+    char str[] = "hyper text markup language";
+    cout << "Test :: " << mystrstr(str, "text") << endl;
+    cout << "Test :: " << mystrstr(str, "tryr") << endl;
 }
 
 
