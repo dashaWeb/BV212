@@ -91,6 +91,7 @@ int main()
 		{
 			cout << " ---- " << value << endl;
 		}
+		file.close();
 	}
 }
 
