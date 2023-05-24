@@ -148,7 +148,7 @@ int main()
 	cout << "\n====================\n";
 	string value;
 	cout << "Enter name author :: ";
-	getline(cin, value);
+	getline(cin,value);
 	cout << value << endl;
 	index = findByAthor(library, size, value);
 	if (index != -1) {
